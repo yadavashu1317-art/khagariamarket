@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khagaria Market - discover local shops and products in Khagaria district.">
+  <title>Khagaria Market | Local Online Market</title>
+  <style>
+    :root { --blue:#174ea6; --blue2:#2563eb; --ink:#172033; --muted:#5d687b; --bg:#f4f7fb; --line:#dbe3ef; --white:#fff; --green:#137547; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+    header { background:linear-gradient(120deg,#123b7a,#2563eb); color:#fff; padding:22px max(18px,calc((100% - 1100px)/2)); }
+    .top { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .brand { font-size:clamp(24px,4vw,34px); font-weight:800; letter-spacing:.2px; }
+    .tag { opacity:.92; margin-top:4px; }
+    nav { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+    nav a { color:#fff; text-decoration:none; padding:8px 12px; border:1px solid #ffffff66; border-radius:8px; font-size:14px; }
+    main { max-width:1100px; margin:24px auto; padding:0 16px 40px; }
+    .hero { background:#fff; border:1px solid var(--line); border-radius:18px; padding:clamp(20px,4vw,36px); box-shadow:0 8px 25px #1c376015; }
+    h1 { margin:0 0 10px; font-size:clamp(25px,4vw,36px); }
+    h2 { margin:0 0 14px; font-size:23px; }
+    p { margin:8px 0; }
+    .muted { color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 0; }
+    .chip { background:#eaf1ff; color:#174ea6; padding:7px 11px; border-radius:999px; font-size:14px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:18px; margin-top:20px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:15px; padding:22px; box-shadow:0 5px 16px #1c37600a; }
+    label { display:block; font-weight:700; margin:13px 0 6px; font-size:14px; }
+    input, select, textarea { width:100%; padding:11px 12px; border:1px solid #bdc9da; border-radius:9px; font:inherit; background:#fff; color:var(--ink); }
+    textarea { min-height:85px; resize:vertical; }
+    button, .button { border:0; border-radius:9px; padding:11px 15px; font-weight:700; font-size:15px; cursor:pointer; text-decoration:none; display:inline-block; }
+    .primary { background:var(--blue2); color:#fff; }
+    .secondary { background:#eaf1ff; color:var(--blue); }
+    .danger { background:#fff0f0; color:#a21d1d; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .notice { border-left:4px solid #e1a500; background:#fff8dd; padding:12px 14px; border-radius:8px; font-size:14px; margin-top:15px; }
+    .status { margin-top:12px; color:var(--green); font-weight:700; min-height:22px; }
+    .entry { border:1px solid var(--line); border-radius:10px; padding:12px; margin-top:10px; overflow-wrap:anywhere; }
+    footer { text-align:center; padding:22px 16px; color:var(--muted); font-size:13px; }
+    .small { font-size:13px; }
+    .hidden { display:none; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div>
+      <div class="brand">Khagaria Market</div>
+      <div class="tag">Your local market for Khagaria district, Bihar</div>
+    </div>
+    <div class="small">Local shops • Products • Direct contact</div>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#register">Shop registration</a>
+    <a href="#records">Saved records</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <h1>Discover local shops in Khagaria</h1>
+    <p class="muted">A starting website for connecting customers with local shopkeepers. Add shop details and product information below.</p>
+    <div class="chips" id="categories">
+      <span class="chip">Grocery</span><span class="chip">Clothing</span><span class="chip">Mobile & Electronics</span>
+      <span class="chip">Home & Kitchen</span><span class="chip">Books & Stationery</span><span class="chip">Other products</span>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="register">
+      <h2>Register a local shop</h2>
+      <p class="muted small">Enter details only with the shop owner's permission.</p>
+      <form id="shopForm">
+        <label for="shopName">Shop name *</label>
+        <input id="shopName" name="shopName" required maxlength="100" placeholder="e.g. Sharma General Store">
+        <label for="ownerName">Owner / contact person's name</label>
+        <input id="ownerName" name="ownerName" maxlength="100" placeholder="Name">
+        <label for="category">Main category *</label>
+        <select id="category" name="category" required>
+          <option value="">Choose category</option><option>Grocery</option><option>Clothing</option><option>Mobile & Electronics</option>
+          <option>Home & Kitchen</option><option>Books & Stationery</option><option>Food</option><option>Medicine</option><option>Other</option>
+        </select>
+        <label for="area">Area / town / village *</label>
+        <input id="area" name="area" required maxlength="120" placeholder="Area, town or village in Khagaria">
+        <label for="phone">Public shop phone number</label>
+        <input id="phone" name="phone" type="tel" maxlength="20" placeholder="Only if owner agrees">
+        <label for="products">Products / services</label>
+        <textarea id="products" name="products" maxlength="600" placeholder="What does this shop sell?"></textarea>
+        <label for="notes">Price range or opening hours (optional)</label>
+        <input id="notes" name="notes" maxlength="200" placeholder="e.g. 9 AM–8 PM">
+        <div class="actions"><button class="primary" type="submit">Save shop record</button><button class="secondary" type="reset">Clear form</button></div>
+        <div class="status" id="shopStatus" role="status"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Add a product</h2>
+      <p class="muted small">Use this to build an initial catalogue. Confirm prices with the shopkeeper.</p>
+      <form id="productForm">
+        <label for="productName">Product name *</label>
+        <input id="productName" name="productName" required maxlength="120" placeholder="e.g. 5 kg rice bag">
+        <label for="productShop">Shop name *</label>
+        <input id="productShop" name="productShop" required maxlength="100" placeholder="Shop name">
+        <label for="productCategory">Category *</label>
+        <select id="productCategory" name="productCategory" required>
+          <option value="">Choose category</option><option>Grocery</option><option>Clothing</option><option>Mobile & Electronics</option>
+          <option>Home & Kitchen</option><option>Books & Stationery</option><option>Food</option><option>Medicine</option><option>Other</option>
+        </select>
+        <label for="price">Price in ₹ (optional)</label>
+        <input id="price" name="price" type="number" min="0" step="0.01" placeholder="e.g. 350">
+        <label for="productDetails">Product details (optional)</label>
+        <textarea id="productDetails" name="productDetails" maxlength="500" placeholder="Size, brand, availability, etc."></textarea>
+        <div class="actions"><button class="primary" type="submit">Save product record</button><button class="secondary" type="reset">Clear form</button></div>
+        <div class="status" id="productStatus" role="status"></div>
+      </form>
+    </section>
+  </div>
+
+  <section class="card" id="records" style="margin-top:20px">
+    <h2>Saved records on this device</h2>
+    <p class="muted small">Download a backup as CSV. These records are saved only in this browser on this device.</p>
+    <div id="recordSummary">No records saved yet.</div>
+    <div class="actions">
+      <button class="primary" id="downloadShops" type="button">Download shops CSV</button>
+      <button class="primary" id="downloadProducts" type="button">Download products CSV</button>
+      <button class="secondary" id="exportAll" type="button">Download all data (JSON)</button>
+      <button class="danger" id="clearData" type="button">Delete saved data</button>
+    </div>
+    <div class="notice"><strong>Important:</strong> This first version stores entries in the browser where they are entered. If a customer or shopkeeper opens the live website on another phone, their form entries will not automatically reach you. Online collection from everyone needs a connected form service or database, which we can set up next.</div>
+  </section>
+</main>
+<footer>Khagaria Market • Local marketplace starter website • Please collect public business details with permission.</footer>
+
+<script>
+  const SHOP_KEY = "khagariaMarketShops";
+  const PRODUCT_KEY = "khagariaMarketProducts";
+  const readData = key => {
+    try { return JSON.parse(localStorage.getItem(key) || "[]"); }
+    catch (e) { return []; }
+  };
+  const writeData = (key, data) => localStorage.setItem(key, JSON.stringify(data));
+  const formObject = form => Object.fromEntries(new FormData(form).entries());
+  const safeText = value => String(value ?? "").replace(/[&<>"']/g, ch => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[ch]));
+  function updateSummary() {
+    const shops = readData(SHOP_KEY), products = readData(PRODUCT_KEY);
+    const box = document.getElementById("recordSummary");
+    box.innerHTML = `<strong>${shops.length}</strong> shop record(s) and <strong>${products.length}</strong> product record(s) saved on this device.`;
+    if (!shops.length && !products.length) return;
+    const recent = [
+      ...shops.slice(-3).reverse().map(x => ({kind:"Shop", name:x.shopName, detail:x.area})),
+      ...products.slice(-3).reverse().map(x => ({kind:"Product", name:x.productName, detail:x.productShop}))
+    ];
+    recent.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "entry";
+      div.innerHTML = `<strong>${safeText(item.kind)}:</strong> ${safeText(item.name)} <span class="muted">— ${safeText(item.detail)}</span>`;
+      box.appendChild(div);
+    });
+  }
+  document.getElementById("shopForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const item = formObject(event.currentTarget);
+    item.createdAt = new Date().toISOString();
+    const data = readData(SHOP_KEY); data.push(item); writeData(SHOP_KEY, data);
+    event.currentTarget.reset();
+    document.getElementById("shopStatus").textContent = "Shop record saved in this browser.";
+    updateSummary();
+  });
+  document.getElementById("productForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const item = formObject(event.currentTarget);
+    item.createdAt = new Date().toISOString();
+    const data = readData(PRODUCT_KEY); data.push(item); writeData(PRODUCT_KEY, data);
+    event.currentTarget.reset();
+    document.getElementById("productStatus").textContent = "Product record saved in this browser.";
+    updateSummary();
+  });
+  function downloadFile(filename, content, type) {
+    const blob = new Blob([content], {type});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a"); a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+  }
+  function toCSV(rows) {
+    if (!rows.length) return "";
+    const headers = [...new Set(rows.flatMap(row => Object.keys(row)))];
+    const cell = value => `"${String(value ?? "").replace(/"/g, '""')}"`;
+    return [headers.map(cell).join(","), ...rows.map(row => headers.map(h => cell(row[h])).join(","))].join("\r\n");
+  }
+  document.getElementById("downloadShops").addEventListener("click", () => {
+    const data = readData(SHOP_KEY);
+    if (!data.length) return alert("No shop records to download yet.");
+    downloadFile("khagaria-market-shops.csv", "\uFEFF" + toCSV(data), "text/csv;charset=utf-8");
+  });
+  document.getElementById("downloadProducts").addEventListener("click", () => {
+    const data = readData(PRODUCT_KEY);
+    if (!data.length) return alert("No product records to download yet.");
+    downloadFile("khagaria-market-products.csv", "\uFEFF" + toCSV(data), "text/csv;charset=utf-8");
+  });
+  document.getElementById("exportAll").addEventListener("click", () => {
+    downloadFile("khagaria-market-backup.json", JSON.stringify({shops:readData(SHOP_KEY),products:readData(PRODUCT_KEY)}, null, 2), "application/json");
+  });
+  document.getElementById("clearData").addEventListener("click", () => {
+    if (!confirm("Delete all shop and product records saved in this browser? Download a backup first if needed.")) return;
+    localStorage.removeItem(SHOP_KEY); localStorage.removeItem(PRODUCT_KEY); updateSummary();
+  });
+  updateSummary();
+</script>
+</body>
+</html>
